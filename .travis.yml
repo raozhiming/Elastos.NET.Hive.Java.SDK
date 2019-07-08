@@ -1,7 +1,16 @@
 language: java
 
-jdk:
-- oraclejdk8
+matrix:
+  include:
+    - env: oraclejdk8
+      jdk: oraclejdk8
+
+    - env: oraclejdk11
+      jdk: oraclejdk11
+
+    - env: TRUSTY
+      dist: trusty
+      jdk: oraclejdk8
 
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
